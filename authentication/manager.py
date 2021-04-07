@@ -15,6 +15,9 @@ class AccountManager(BaseUserManager):
 
         return user
 
+    def excluded_admins(self):
+        return self.model.objects.exclude(role=self.model.RoleChoice.ADMIN)
+
     def create_superuser(self, username, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
