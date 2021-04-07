@@ -14,6 +14,11 @@ class LoggerService:
             cls.init_logger()
 
     @classmethod
+    def exception(cls, msg, **kwargs):
+        kwargs.pop('exc_info', None)
+        cls.warning(msg, exc_info=True, **kwargs)
+
+    @classmethod
     def warning(cls, msg,  **kwargs):
         cls.check_logger()
         cls.logger.warning(msg,  **kwargs)
