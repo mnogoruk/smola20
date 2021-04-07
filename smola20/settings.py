@@ -151,6 +151,10 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']
 }
 
+# URL
+SITE_URL = "db.smola20.ru"
+API_URL = ''
+
 # BITRIX
 # BITRIX_URL = "https://smola20.art-clever.ru/"
 BITRIX_URL = "127.0.0.1:8000/"
