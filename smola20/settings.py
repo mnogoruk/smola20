@@ -24,7 +24,9 @@ SECRET_KEY = 'django-insecure-o5_8%aav%-z^quj1pd7vxx4-@w8al62_qvt0xlcqu$^=1pf-_8
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-TESTING = DEBUG
+TESTING = True
+
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -163,6 +165,7 @@ BITRIX_AUF_CONF = {"login": "dev", "password": "123456"}
 
 # AUTHENTICATION
 AUTH_USER_MODEL = 'authentication.Account'
+AUTH_TESTING = True
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=14),
