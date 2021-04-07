@@ -8,24 +8,6 @@ from django.apps import apps
 class AccountManager(BaseUserManager):
     use_in_migrations = True
 
-    def crete_storage_worker(self, username, password, **extra_fields):
-        extra_fields.setdefault('role', self.model.RoleChoice.STORAGE_WORKER)
-        user = self.create_user(username, password, **extra_fields)
-
-        return user
-
-    def create_office_worker(self, username, password, **extra_fields):
-        extra_fields.setdefault('role', self.model.RoleChoice.OFFICE_WORKER)
-        user = self.create_user(username, password, **extra_fields)
-
-        return user
-
-    def create_admin(self, username, password, **extra_fields):
-        extra_fields.setdefault('role', self.model.RoleChoice.ADMIN)
-        user = self.create_user(username, password, **extra_fields)
-
-        return user
-
     def create_user(self, username, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
